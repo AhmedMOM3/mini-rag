@@ -47,14 +47,14 @@ class VectorDBInterface(ABC):
     
     @abstractmethod
     def insert_many(self, collection_name: str,
-                          text: list,
-                          vector: list,
+                          texts: list,
+                          vectors: list,
                           metadata: list = None,
-                          record_id: list = None,
+                          record_ids: list = None,
                           batch_size: int = 50):
         pass
     
     @abstractmethod
-    def search_by_vector(self, collection_name: str, voctor: list, limit: int):
+    def search_by_vector(self, collection_name: str, vector: list, limit: int):
         pass
     
