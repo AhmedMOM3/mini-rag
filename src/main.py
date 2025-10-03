@@ -6,8 +6,11 @@ from store.vectordb.VectorDBProviderFactory import VectorDBProviderFactory
 from store.llm.templates.template_parser import TemplateParser
 from sqlalchemy.ext.asyncio import create_async_engine, AsyncSession
 from sqlalchemy.orm import sessionmaker
+from utils.metrics import setup_metrics
 
 app=FastAPI()
+
+setup_metrics(app)
 
 async def startup_span():
     settings = get_settings()
